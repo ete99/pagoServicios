@@ -6,9 +6,6 @@ const pool = new Pool({
   database: process.env.POSTGRES_DB,
   password: process.env.POSTGRES_PASSWORD,
   port: process.env.DB_PORT,
-  // ssl: {
-  //   rejectUnauthorized: false,
-  // },
 });
 
 const sqlCommands = `
