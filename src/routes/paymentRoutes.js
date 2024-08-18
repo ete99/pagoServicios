@@ -13,14 +13,16 @@ router.post(
   validate,
   PaymentController.processPayment
 );
+
 router.get(
   "/history/:userId",
   paymentValidationRules.getPaymentHistory,
   validate,
   PaymentController.getPaymentHistory
 );
+
 router.get(
-  "/byService/:userId/:serviceCode",
+  "/history/:userId/service/:serviceCode",
   paymentValidationRules.getPaymentsByService,
   validate,
   PaymentController.getPaymentsByService
