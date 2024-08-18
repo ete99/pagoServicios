@@ -15,6 +15,10 @@ class PaymentService {
   }
 
   static async getPaymentHistory(userId, startDate, endDate) {
+    if (!startDate || !endDate) {
+      return Payment.findByUserId(userId);
+    }
+
     return Payment.findByDateRange(userId, startDate, endDate);
   }
 
