@@ -19,7 +19,7 @@ const userValidationRules = {
 
 const paymentValidationRules = {
   processPayment: [
-    body("userId").isInt().withMessage("UserId debe ser un número entero"),
+    body("userId").isUUID().withMessage("UserId debe ser un UUID"),
     body("debtId").isInt().withMessage("DebtId debe ser un número entero"),
 
     body("amountPaid")
@@ -27,7 +27,7 @@ const paymentValidationRules = {
       .withMessage("El monto pagado debe ser un número positivo"),
   ],
   getPaymentHistory: [
-    param("userId").isInt().withMessage("UserId debe ser un número entero"),
+    param("userId").isUUID().withMessage("UserId debe ser un UUID"),
     query("startDate")
       .optional()
       .isISO8601()
@@ -38,7 +38,7 @@ const paymentValidationRules = {
       .withMessage("La fecha de fin debe ser una fecha válida"),
   ],
   getPaymentsByService: [
-    param("userId").isInt().withMessage("UserId debe ser un número entero"),
+    param("userId").isUUID().withMessage("UserId debe ser un UUID"),
     param("serviceCode")
       .notEmpty()
       .withMessage("El código de servicio es requerido"),
