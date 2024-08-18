@@ -21,7 +21,7 @@ class UserService {
       throw new Error("Contraseña incorrecta");
     }
     const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
-      expiresIn: "24h",
+      expiresIn: "7d",
     });
     return { user, token };
   }
