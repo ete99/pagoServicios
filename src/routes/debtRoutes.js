@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.use(authMiddleware);
 
-router.post(
-  "/debt/:referenceNumber/:serviceCode",
+router.get(
+  "/:referenceNumber/:serviceCode",
   debtValidationRules.getDebt,
   validate,
   DebtController.getDebtByServiceCode

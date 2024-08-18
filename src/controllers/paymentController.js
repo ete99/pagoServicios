@@ -19,6 +19,7 @@ class PaymentController {
     try {
       const { userId } = req.params;
       const { startDate, endDate } = req.query;
+
       const payments = await PaymentService.getPaymentHistory(
         userId,
         startDate,
