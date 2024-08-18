@@ -3,6 +3,8 @@ version: "3.8"
 services:
   app:
     build: .
+    platform: linux/amd64
+    image: etevallet/pago_servicios
     ports:
       - "3000:3000"
     depends_on:
@@ -17,6 +19,7 @@ services:
 
   db:
     image: postgres:15
+    platform: linux/amd64
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
